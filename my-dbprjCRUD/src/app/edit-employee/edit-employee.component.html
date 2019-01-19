@@ -1,0 +1,28 @@
+<div class="container">
+  <p>
+    edit-employee works!
+  </p>
+  <form #registerForm="ngForm">
+      <div class="form-group">
+          <label>Employee Id</label>
+          <input type="text"  name="_id" #Id="ngModel" [(ngModel)]="_id" class="form-control"/>
+        </div>
+            <div class="form-group">
+            <input type="button" value="Search" (click)="onSearch(_id)" class="btn btn-primary" />  &nbsp;
+            <input type="reset" value="Reset" class="btn btn-primary" />
+          </div>
+      <div class="form-group">
+          <label>Employee Name </label>
+          <input type="hidden" name="_id" #Id="ngModel" [(ngModel)]="employeeData._id" >
+          <input type="text" name="Name" #Name="ngModel" [(ngModel)]="employeeData.Name" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label> Salary</label>
+              <input type="text" name="Salary" #Salary="ngModel" [(ngModel)]="employeeData.Salary" class="form-control"/>
+        </div>
+       
+          <div class="form-group">
+            <input type="button" value="Update" class="btn btn-primary" (click)="UpdateEmployee(employeeData)" />
+          </div>
+    </form>
+  </div>
